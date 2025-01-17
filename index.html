@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .fact {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .fact h2 {
+            margin: 0;
+            color: #007BFF;
+        }
+
+        .fact p {
+            margin: 5px 0 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Laptop Facts</h1>
+        <div id="facts-container"></div>
+    </div>
+    <script>
+        const laptopFacts = [
+            {
+                fact: "Portability",
+                description: "Laptops are designed for portability, allowing users to work from virtually anywhere. They typically include a built-in battery, which means they can be used without being plugged into a power source for a certain period."
+            },
+            {
+                fact: "Components",
+                description: "Laptops integrate all the components of a desktop computer, including a display, keyboard, touchpad (or trackpad), and speakers, into a single unit."
+            },
+            {
+                fact: "Variety of Sizes",
+                description: "Laptops come in various sizes, typically ranging from 11 inches to 17 inches in screen size. Smaller laptops are often referred to as notebooks or ultrabooks."
+            },
+            {
+                fact: "Operating Systems",
+                description: "The most common operating systems for laptops are Windows, macOS, and Linux. Each offers different features and user experiences."
+            },
+            {
+                fact: "Performance",
+                description: "Laptops can vary greatly in terms of performance. High-performance laptops, often referred to as gaming laptops or workstations, can handle demanding tasks like gaming, video editing, and 3D rendering."
+            },
+            {
+                fact: "Connectivity",
+                description: "Modern laptops offer various connectivity options, including Wi-Fi, Bluetooth, USB ports, HDMI, and sometimes Ethernet ports. Some models also include Thunderbolt ports for faster data transfer."
+            },
+            {
+                fact: "Touchscreen",
+                description: "Many laptops now come with touchscreen capabilities, allowing for more interactive use. This feature is particularly common in 2-in-1 laptops, which can function as both a laptop and a tablet."
+            },
+            {
+                fact: "Battery Life",
+                description: "Battery life can vary significantly between models, with some laptops offering over 10 hours of use on a single charge, while others may last only a few hours."
+            },
+            {
+                fact: "Storage Options",
+                description: "Laptops typically come with either a Hard Disk Drive (HDD) or a Solid State Drive (SSD). SSDs are faster and more reliable but are usually more expensive than HDDs."
+            },
+            {
+                fact: "Security Features",
+                description: "Many modern laptops include security features such as fingerprint scanners, facial recognition, and TPM (Trusted Platform Module) chips to enhance data protection."
+            }
+        ];
+
+        const factsContainer = document.getElementById('facts-container');
+
+        laptopFacts.forEach(fact => {
+            const factElement = document.createElement('div');
+            factElement.classList.add('fact');
+            factElement.innerHTML = `
+                <h2>${fact.fact}</h2>
+                <p>${fact.description}</p>
+            `;
+            factsContainer.appendChild(factElement);
+        });
+    </script>
+</body>
+</html>
