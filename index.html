@@ -40,12 +40,34 @@
             margin: 5px 0 0;
             color: #555;
         }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Laptop Facts</h1>
         <div id="facts-container"></div>
+        <div class="button-container">
+            <button onclick="replaceFacts()">Replace Facts</button>
+        </div>
     </div>
     <script>
         const laptopFacts = [
@@ -91,17 +113,70 @@
             }
         ];
 
+        const newLaptopFacts = [
+            {
+                fact: "Energy Efficiency",
+                description: "Modern laptops are designed to be energy efficient, consuming less power than desktop computers, which helps in extending battery life and reducing electricity costs."
+            },
+            {
+                fact: "Durability",
+                description: "Many laptops are built with durable materials and are tested for ruggedness to withstand everyday wear and tear, making them suitable for travel and outdoor use."
+            },
+            {
+                fact: "Customization",
+                description: "Some laptops offer customization options, allowing users to upgrade components like RAM and storage to meet their specific needs."
+            },
+            {
+                fact: "Cloud Integration",
+                description: "Laptops often come with built-in cloud integration, enabling users to easily store and access files online, collaborate with others, and back up important data."
+            },
+            {
+                fact: "Virtual Reality",
+                description: "High-end laptops are now capable of supporting virtual reality (VR) applications, providing immersive experiences for gaming and professional simulations."
+            },
+            {
+                fact: "Eco-Friendly Options",
+                description: "Eco-friendly laptops are made with sustainable materials and are designed to be easily recyclable, reducing their environmental impact."
+            },
+            {
+                fact: "Noise Levels",
+                description: "Laptops are generally quieter than desktop computers, with some models featuring fanless designs for silent operation."
+            },
+            {
+                fact: "Multi-Display Support",
+                description: "Many laptops support multiple external displays, allowing users to expand their workspace for increased productivity."
+            },
+            {
+                fact: "Biometric Security",
+                description: "Advanced biometric security features, such as fingerprint and iris scanners, provide enhanced protection for sensitive data on laptops."
+            },
+            {
+                fact: "Rapid Charging",
+                description: "Some laptops feature rapid charging technology, allowing users to quickly recharge their devices and minimize downtime."
+            }
+        ];
+
         const factsContainer = document.getElementById('facts-container');
 
-        laptopFacts.forEach(fact => {
-            const factElement = document.createElement('div');
-            factElement.classList.add('fact');
-            factElement.innerHTML = `
-                <h2>${fact.fact}</h2>
-                <p>${fact.description}</p>
-            `;
-            factsContainer.appendChild(factElement);
-        });
+        function displayFacts(facts) {
+            factsContainer.innerHTML = '';
+            facts.forEach(fact => {
+                const factElement = document.createElement('div');
+                factElement.classList.add('fact');
+                factElement.innerHTML = `
+                    <h2>${fact.fact}</h2>
+                    <p>${fact.description}</p>
+                `;
+                factsContainer.appendChild(factElement);
+            });
+        }
+
+        function replaceFacts() {
+            displayFacts(newLaptopFacts);
+        }
+
+        // Initial display of facts
+        displayFacts(laptopFacts);
     </script>
 </body>
 </html>
